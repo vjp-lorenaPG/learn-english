@@ -1,0 +1,23 @@
+.tarjeta{
+
+    height: 450px;
+}
+.bar-top{
+    background-color: aquamarine;
+    height: min-content;
+}
+.nube{
+    background-color: cadetblue;
+    height: initial;
+    border-radius: 5px;
+}
+.card {
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}

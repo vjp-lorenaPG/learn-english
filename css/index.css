@@ -1,23 +1,146 @@
-.tarjeta{
+body {
+  background:  radial-gradient(rgba(0, 195, 140, 0.792), rgba(0, 176, 203, 0.712));
+  font-family:--bs-font-sans-serif;
+  color: rgb(44, 88, 90);
+} 
 
-    height: 450px;
-}
+
 .bar-top{
-    background-color: aquamarine;
-    height: min-content;
+    background-color:  #c9f2ee;
+    display: flex;
+    justify-content: space-between; /* separa título y botones */
+    align-items: center; /* los pone en línea horizontal */
+    padding: 10px 20px;
+    color: rgb(61, 117, 119);
+    border-bottom: #899db7 2px solid;
+
+    
 }
 .nube{
-    background-color: cadetblue;
+    border: 8px double rgb(61, 117, 119);
+    border-radius: 20px;
     height: initial;
     border-radius: 5px;
 }
-.card {
-  border-radius: 20px;
-  border: none;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  transition: 0.2s;
+
+.btns{
+  display: flex;
+  gap: 15px; 
 }
 
-.card:hover {
+.btns {
+  
+  padding: 10px 20px;
+  border-radius: 15px;
+  background:   #ECFFFD;
+}
+.btn{
+  
+}
+.btn {
+  padding: 10px 100px ;
+  border-radius: 12px;
+  background-color:  #BEEFEA;
+  
+  text-decoration: none;
+  color: rgb(61, 117, 119);
+  font-weight: bold;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+  
+}
+.btn:hover {
+  background-color: #a2dfd9; /* mismo color base */
+  color: inherit;
+  border: 2px dashed rgb(61, 117, 119); /* borde sólido con el mismo color */
+  box-shadow:
+    5px 5px 10px rgba(0,0,0,0.3),
+    10px 10px 20px rgba(0,0,0,0.2);
+  text-shadow: 0 0 3px rgb(61, 117, 119); /* sombra de texto para resaltar */
+  text-decoration: underline;
+}
+/*Hasta aquí parte superior -------------------*/
+
+.contenido{
+  width: 80%;
+  margin: auto;
+  padding: 40px;
+  background-color:#BEEFEA;
+  border: #899db7 2px solid;
+  border-radius: 10px;
+  color: white;
+  box-shadow:
+    5px 5px 10px rgba(0,0,0,0.3),
+    10px 10px 20px rgba(0,0,0,0.2);
+}
+.tarjeta a {
+    text-decoration: none;
+    color: rgb(61, 117, 119);
+    font-weight: bold;
+}
+/*Card pegatinas posit */
+.curso {
+    background-color: #f9f9f9;
+    border: 2px solid #fafafa;
+    width: 100%;
+    height: 80px;
+    padding: 15px;
+    margin: 20px 0;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.1rem;
+    box-shadow: 
+        3px 3px 6px rgba(0,0,0,0.2),
+        6px 6px 15px rgba(0,0,0,0.1);
+        color: #2BB87F;
+  margin-top: 0px;
+  border-radius: 10px;
+}
+
+
+
+.posit:hover {
   transform: translateY(-5px);
+  color: #2BB87F;
+  box-shadow:
+    5px 5px 10px rgba(0,0,0,0.3),
+    10px 10px 20px rgba(0,0,0,0.2);
+  border: 3px dashed #2BB87F;
+  box-shadow:
+    5px 5px 10px rgba(0,0,0,0.3),
+    10px 10px 20px rgba(0,0,0,0.2);
+  text-shadow: 0 0 3px #3b3d3c; /* sombra de texto para resaltar */
+  text-decoration: underline;
+}
+.posit{  
+  background-color: #ECFFFD;
+  border-radius: 10px;
+    border: 3px solid  #a6d7d2;
+    padding: 15px 11px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.1rem;
+    box-shadow: 
+        3px 3px 6px rgba(0,0,0,0.2),
+        6px 6px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  transition: 0.2s;
+  color: rgb(61, 117, 119);
+}
+ .posit a {
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.entrada {
+    padding: 15px 11px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.2rem;
+    box-shadow: 
+        3px 3px 6px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
+  padding: 30px;
+  background-color: radial-gradient(135deg, #8d8d8f, #aeb3ad);
+  
 }

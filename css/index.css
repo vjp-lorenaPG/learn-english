@@ -108,7 +108,7 @@ body {
   box-shadow:
     5px 5px 10px rgba(0,0,0,0.3),
     10px 10px 20px rgba(0,0,0,0.2);
-  text-shadow: 0 0 3px #3b3d3c; /* sombra de texto para resaltar */
+  text-shadow: 0 3px 3px #c5c5c5; /* sombra de texto para resaltar */
   text-decoration: underline;
 }
 .posit{  

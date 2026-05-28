@@ -1,106 +1,574 @@
+/* =============================================
+   APRENDE INGLÉS — Estilos principales
+   Autora: Lorena Palomino | DAM
+============================================= */
+
+/* =============================================
+   VARIABLES DE COLOR Y TIPOGRAFÍA
+============================================= */
 :root {
-  --uk-blue: #012169;
-  --uk-blue-soft: #E6ECF8;
-  --uk-blue-mid: #2F4FA3;
-  --uk-red: #C8102E;
-  --uk-white: #FFFFFF;
-  --bg-main: #F4F7FB;
+    /* Paleta principal */
+    --azul:           #4CC9F0;
+    --azul-claro:     #E0F7FD;
+    --azul-oscuro:    #0a6a85;
+
+    --verde:          #06D6A0;
+    --verde-claro:    #D8FBF2;
+    --verde-oscuro:   #035c44;
+
+    --naranja:        #F77F00;
+    --naranja-claro:  #FEF0E0;
+    --naranja-oscuro: #7a3e00;
+
+    /* Fondo y texto */
+    --fondo:          #D8F0FA;
+    --texto-oscuro:   #0a4f66;
+    --texto-medio:    #2d6a7a;
 }
 
-/* BASE */
+
+/* =============================================
+   BASE
+============================================= */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
-  background: var(--bg-main);
-  font-family: var(--bs-font-sans-serif);
-  color: var(--uk-blue);
+    font-family: 'Nunito', sans-serif;
+    background: var(--fondo);
+    color: var(--texto-oscuro);
+    min-height: 100vh;
+    margin: 0;
 }
 
-/* HEADER */
+
+/* =============================================
+   FONDO DECORATIVO (generado por JS)
+============================================= */
+#bg-pattern {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+
+/* =============================================
+   NAVBAR
+============================================= */
 .bar-top {
-  background: var(--uk-white);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  border-bottom: 2px solid var(--uk-blue-soft);
+    background: white;
+    border-bottom: 2.5px solid var(--azul);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-/* BOTONES */
-.btns {
-  display: flex;
-  gap: 15px;
+.nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.btn {
-  padding: 10px 30px;
-  border-radius: 25px;
-  border: 2px solid var(--uk-blue-mid);
-  background: var(--uk-white);
-  color: var(--uk-blue);
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.2s;
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--texto-oscuro);
+    text-decoration: none;
+    transition: opacity 0.2s;
 }
 
-.btn:hover {
-  background: var(--uk-blue-mid);
-  color: white;
+.nav-brand:hover {
+    opacity: 0.75;
+    color: var(--texto-oscuro);
 }
 
-/* BIENVENIDA */
-.entrada {
-  background: linear-gradient(135deg, var(--uk-blue), var(--uk-blue-mid));
-  color: white;
-  text-align: center;
-  padding: 50px 20px;
-  margin-bottom: 40px;
+.nav-brand .bi {
+    font-size: 1.35rem;
+    color: var(--azul);
 }
 
-/* CONTENEDOR CURSOS */
-.contenido {
-  width: 85%;
-  margin: auto;
-  padding: 40px;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+.nav-brand span {
+    color: var(--azul);
 }
 
-/* TITULO CURSOS */
-.curso {
-  background: var(--uk-blue-soft);
-  border-radius: 15px;
-  padding: 15px;
-  margin-bottom: 30px;
-  text-align: center;
-  color: var(--uk-blue);
+/* Botones del navbar con forma de píldora */
+.nube-btn {
+    font-family: 'Nunito', sans-serif !important;
+    font-size: 0.86rem !important;
+    font-weight: 700 !important;
+    background: var(--azul-claro) !important;
+    color: var(--azul-oscuro) !important;
+    border: 1.5px solid var(--azul) !important;
+    border-radius: 22px !important;
+    padding: 7px 20px !important;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
 }
 
-/* TARJETAS */
-.tarjeta a {
-  text-decoration: none;
+.nube-btn:hover {
+    background: var(--azul) !important;
+    color: white !important;
 }
 
-.posit {
-  background: var(--uk-blue-soft);
-  border-radius: 15px;
-  padding: 25px;
-  text-align: center;
-  font-weight: 500;
-  color: var(--uk-blue);
-  transition: 0.2s;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  border-bottom: 4px solid var(--uk-red); /* detalle UK */
+
+/* =============================================
+   PAGE WRAPPER — tarjeta central sobre el fondo
+============================================= */
+.page-wrapper {
+    max-width: 960px;
+    margin: 16px auto 28px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.09);
 }
 
-/* HOVER TARJETAS */
-.posit:hover {
-  background: var(--uk-blue);
-  color: white;
-  transform: translateY(-5px);
+
+/* =============================================
+   HERO
+============================================= */
+.hero {
+    background: var(--azul);
+    padding: 56px 32px 48px;
+    text-align: center;
 }
 
-/* TEXTO TARJETAS */
-.posit h3 {
-  margin: 0;
+.eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 12px;
+    font-weight: 600;
 }
 
+.hero h1 {
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1.05;
+    margin-bottom: 6px;
+}
+
+.hero h1 .accent {
+    color: #D4F7EE;
+    font-size: 4.2rem;
+    display: block;
+}
+
+.divider-line {
+    width: 48px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.4);
+    margin: 18px auto;
+    border-radius: 2px;
+}
+
+.hero-sub {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+.cta-btn {
+    font-family: 'Nunito', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    background: white !important;
+    color: var(--azul-oscuro) !important;
+    border: none !important;
+    border-radius: 26px !important;
+    padding: 12px 30px !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    color: var(--azul-oscuro) !important;
+}
+
+
+/* =============================================
+   FRANJA DE CARACTERÍSTICAS
+============================================= */
+.features {
+    background: white;
+    display: flex;
+    border-bottom: 1px solid #e4f3f8;
+}
+
+.feature-box {
+    flex: 1;
+    padding: 26px 18px;
+    text-align: center;
+    border-top: 3px solid var(--acento);
+    border-right: 1px solid #e4f3f8;
+}
+
+.feature-box:last-child {
+    border-right: none;
+}
+
+.feature-box .bi {
+    font-size: 2rem;
+    color: var(--acento);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.feature-box h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--texto-oscuro);
+    margin-bottom: 6px;
+}
+
+.feature-box p {
+    font-size: 0.82rem;
+    color: #7a9aaa;
+    line-height: 1.55;
+    margin: 0;
+}
+
+
+/* =============================================
+   SECCIÓN CURSOS
+============================================= */
+.cursos {
+    background: #F0FBFF;
+    padding: 32px 28px 44px;
+}
+
+.cursos-header {
+    background: #D8F5FB;
+    border-radius: 12px;
+    padding: 12px 20px;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.cursos-header h2 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--azul-oscuro);
+    margin: 0;
+}
+
+.cursos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+/* Tarjetas de curso */
+.tarjeta {
+    background: white;
+    border-radius: 14px;
+    border-bottom: 3px solid var(--c);
+    padding: 22px 14px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.09);
+    text-decoration: none;
+}
+
+.tarjeta-num {
+    width: 44px;
+    height: 44px;
+    background: var(--cb);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--ct);
+}
+
+.tarjeta span {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #1b3a4b;
+}
+
+
+/* =============================================
+   SOBRE EL PROYECTO
+============================================= */
+.sobre-seccion {
+    background: white;
+    padding: 40px 28px 48px;
+    border-top: 3px solid var(--azul-claro);
+}
+
+.sobre-inner {
+    max-width: 100%;
+}
+
+.sobre-seccion h2 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--texto-oscuro);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sobre-seccion h2 .bi {
+    color: var(--azul);
+    font-size: 1.4rem;
+}
+
+.sobre-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.sobre-card {
+    background: #F5FBFE;
+    border-radius: 14px;
+    border-top: 3px solid var(--azul);
+    padding: 22px 20px;
+}
+
+.sobre-card > .bi {
+    font-size: 1.6rem;
+    color: var(--azul);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.sobre-card h3 {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--texto-oscuro);
+    margin-bottom: 10px;
+}
+
+.sobre-card p {
+    font-size: 0.84rem;
+    color: #3a6a7a;
+    line-height: 1.65;
+    margin: 0;
+}
+
+.sobre-libros {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sobre-libros li {
+    font-size: 0.82rem;
+    color: #3a6a7a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.libro-badge {
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+.libro-badge.azul    { background: var(--azul-claro);    color: var(--azul-oscuro); }
+.libro-badge.naranja { background: var(--naranja-claro);  color: var(--naranja-oscuro); }
+.libro-badge.verde   { background: var(--verde-claro);    color: var(--verde-oscuro); }
+
+
+/* =============================================
+   FOOTER
+============================================= */
+.footer {
+    background: #0a4f66;
+    padding: 22px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.footer-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: white;
+}
+
+.footer-sub {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+}
+
+.footer-disclaimer {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.38);
+    max-width: 420px;
+    line-height: 1.5;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.footer-quien {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--azul);
+    text-decoration: none;
+    border: 1.5px solid rgba(76, 201, 240, 0.4);
+    border-radius: 20px;
+    padding: 5px 14px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.footer-quien:hover {
+    background: var(--azul);
+    color: #0a4f66;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 14px;
+}
+
+.footer-icons a {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 1.15rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-icons a:hover {
+    color: white;
+}
+
+
+/* =============================================
+   RESPONSIVE — Tablet (≤ 768px)
+============================================= */
+@media (max-width: 768px) {
+    .page-wrapper {
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .hero h1 {
+        font-size: 2.6rem;
+    }
+
+    .hero h1 .accent {
+        font-size: 3.2rem;
+    }
+
+    .features {
+        flex-direction: column;
+    }
+
+    .feature-box {
+        border-right: none;
+        border-bottom: 1px solid #e4f3f8;
+    }
+
+    .feature-box:last-child {
+        border-bottom: none;
+    }
+
+    .cursos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sobre-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .footer-right {
+        align-items: flex-start;
+    }
+
+    .footer-disclaimer {
+        max-width: 100%;
+    }
+}
+
+
+/* =============================================
+   RESPONSIVE — Móvil (≤ 480px)
+============================================= */
+@media (max-width: 480px) {
+    .nav-inner {
+        padding: 10px 14px;
+    }
+
+    /* En móvil se oculta el segundo botón del nav para no saturar */
+    .btns .nube-btn:last-child {
+        display: none;
+    }
+
+    .hero {
+        padding: 40px 20px 32px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero h1 .accent {
+        font-size: 2.8rem;
+    }
+
+    .cursos {
+        padding: 24px 16px 32px;
+    }
+
+    .cursos-grid {
+        grid-template-columns: 1fr;
+    }
+}

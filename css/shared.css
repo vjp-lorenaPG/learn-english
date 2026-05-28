@@ -1,0 +1,457 @@
+/* =============================================
+   APRENDE INGLÉS — Estilos compartidos
+   Usado en: páginas de curso y páginas de unidad
+   Autora: Lorena Palomino | DAM
+============================================= */
+
+/* =============================================
+   VARIABLES (mismas que index.css)
+============================================= */
+:root {
+    --azul:           #4CC9F0;
+    --azul-claro:     #E0F7FD;
+    --azul-oscuro:    #0a6a85;
+    --verde:          #06D6A0;
+    --verde-claro:    #D8FBF2;
+    --verde-oscuro:   #035c44;
+    --naranja:        #F77F00;
+    --naranja-claro:  #FEF0E0;
+    --naranja-oscuro: #7a3e00;
+    --fondo:          #D8F0FA;
+    --texto-oscuro:   #0a4f66;
+}
+
+/* =============================================
+   BASE
+============================================= */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--fondo);
+    color: var(--texto-oscuro);
+    min-height: 100vh;
+    margin: 0;
+}
+
+#bg-pattern {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* =============================================
+   NAVBAR
+============================================= */
+.bar-top {
+    background: white;
+    border-bottom: 2.5px solid var(--azul);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 13px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--azul-oscuro);
+    text-decoration: none;
+    transition: gap 0.2s;
+}
+
+.back-btn:hover { gap: 10px; color: var(--azul-oscuro); }
+
+.nav-curso-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #7a9aaa;
+}
+
+/* =============================================
+   PAGE WRAPPER
+============================================= */
+.page-wrapper {
+    max-width: 960px;
+    margin: 16px auto 28px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.09);
+}
+
+/* =============================================
+   HERO DE CURSO (primero.html, etc.)
+============================================= */
+.curso-hero {
+    background: var(--azul);
+    padding: 44px 32px 36px;
+    text-align: center;
+    color: white;
+}
+
+.curso-badge {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0 auto 14px;
+    color: white;
+}
+
+.curso-hero h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+    color: white;
+}
+
+.curso-hero .libro {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.75);
+    margin: 0;
+}
+
+.curso-hero .aviso-verificar {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 0.78rem;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 12px;
+    padding: 5px 14px;
+    color: rgba(255,255,255,0.85);
+}
+
+/* =============================================
+   LISTA DE UNIDADES (en página de curso)
+============================================= */
+.unidades-seccion {
+    background: #F0FBFF;
+    padding: 28px 28px 40px;
+}
+
+.unidades-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.unidad-card {
+    background: white;
+    border-radius: 14px;
+    border-left: 4px solid var(--c, var(--azul));
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.unidad-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    text-decoration: none;
+    color: inherit;
+}
+
+.unidad-num {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--cb, var(--azul-claro));
+    color: var(--ct, var(--azul-oscuro));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.unidad-info { flex: 1; min-width: 0; }
+
+.unidad-info h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--texto-oscuro);
+    margin: 0 0 3px;
+}
+
+.unidad-info p {
+    font-size: 0.82rem;
+    color: #7a9aaa;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.unidad-arrow {
+    font-size: 1.1rem;
+    color: var(--c, var(--azul));
+    flex-shrink: 0;
+}
+
+/* Separadores de sección dentro de la lista */
+.unidades-sep {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #7a9aaa;
+    text-transform: uppercase;
+    padding: 14px 0 4px;
+}
+
+/* =============================================
+   HERO DE UNIDAD (unit1.html, etc.)
+============================================= */
+.unit-hero {
+    background: var(--c, var(--azul));
+    padding: 40px 32px 32px;
+    color: white;
+}
+
+.unit-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.22);
+    border-radius: 12px;
+    padding: 4px 14px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.unit-hero h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: white;
+    margin: 0 0 6px;
+}
+
+.unit-hero .unit-curso {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.72);
+    margin: 0;
+}
+
+/* =============================================
+   CONTENIDO DE UNIDAD
+============================================= */
+.unit-content {
+    background: white;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.unit-section h2 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--texto-oscuro);
+    margin: 0 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.unit-section h2::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 18px;
+    background: var(--c, var(--azul));
+    border-radius: 2px;
+}
+
+/* Placeholder del embed de Canva */
+.canva-placeholder {
+    background: var(--azul-claro);
+    border: 2px dashed var(--azul);
+    border-radius: 14px;
+    padding: 40px 24px;
+    text-align: center;
+    color: var(--azul-oscuro);
+}
+
+.canva-placeholder .bi {
+    font-size: 2.5rem;
+    color: var(--azul);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.canva-placeholder p {
+    font-size: 0.88rem;
+    margin: 0 0 6px;
+    font-weight: 700;
+}
+
+.canva-placeholder .hint {
+    font-size: 0.78rem;
+    color: #7a9aaa;
+    font-weight: 400;
+}
+
+.canva-embed iframe {
+    width: 100%;
+    height: 480px;
+    border: none;
+    border-radius: 12px;
+}
+
+/* Vocabulario */
+.vocab-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.vocab-tag {
+    background: var(--azul-claro);
+    color: var(--azul-oscuro);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+/* Gramática */
+.grammar-box {
+    background: #F0FBFF;
+    border-radius: 12px;
+    border-left: 4px solid var(--azul);
+    padding: 16px 18px;
+}
+
+.grammar-box p {
+    font-size: 0.88rem;
+    margin: 0 0 6px;
+    line-height: 1.6;
+}
+
+.grammar-box p:last-child { margin: 0; }
+
+/* Cultura */
+.culture-box {
+    background: var(--naranja-claro);
+    border-radius: 12px;
+    border-left: 4px solid var(--naranja);
+    padding: 16px 18px;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+/* =============================================
+   FOOTER
+============================================= */
+.footer {
+    background: #0a4f66;
+    padding: 16px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer > span {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 600;
+}
+
+.footer-links { display: flex; gap: 16px; }
+
+.footer-links a {
+    color: rgba(255,255,255,0.4);
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover { color: white; }
+
+/* =============================================
+   NAVBAR — brand link a inicio
+============================================= */
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #0a4f66;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.nav-brand:hover {
+    opacity: 0.7;
+    color: #0a4f66;
+}
+
+.nav-brand .bi {
+    font-size: 1.2rem;
+    color: #4CC9F0;
+}
+
+.nav-brand span {
+    color: #4CC9F0;
+}
+
+/* =============================================
+   SABER MÁS (estilos mantenidos aunque ya no se use)
+============================================= */
+.unit-sabermas {
+    border-top: 2px dashed rgba(0,0,0,0.08);
+    margin-top: 8px;
+}
+
+.unit-sabermas h2 {
+    color: #0a4f66;
+}
+
+.sabermas-box {
+    background: #f0f7fa;
+    border-radius: 12px;
+    border-left: 4px solid #0a4f66;
+    padding: 16px 20px;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: #2c3e50;
+}
+
+.sabermas-box p { margin: 0; }
+
+/* =============================================
+   RESPONSIVE
+============================================= */
+@media (max-width: 768px) {
+    .page-wrapper { margin: 0; border-radius: 0; box-shadow: none; }
+    .unit-hero h1 { font-size: 1.7rem; }
+    .curso-hero h1 { font-size: 1.8rem; }
+    .unit-content { padding: 20px 16px; }
+    .unidades-seccion { padding: 20px 16px 32px; }
+    .footer { flex-direction: column; gap: 10px; text-align: center; }
+}

@@ -286,6 +286,67 @@ body {
     border-radius: 2px;
 }
 
+/* Pista de interacción Genially */
+.genially-hint {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+    border: 2px dashed #F7C948;
+    border-radius: 14px;
+    padding: 14px 18px;
+    margin-bottom: 14px;
+    font-size: 0.88rem;
+    color: #5a3e00;
+    line-height: 1.5;
+}
+
+.genially-hint-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    animation: wiggle 1.8s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(-8deg); }
+    50%       { transform: rotate(8deg); }
+}
+
+.genially-hint-text {
+    flex: 1;
+}
+
+.genially-hint-text strong {
+    display: block;
+    font-size: 0.92rem;
+    color: #3a2600;
+    margin-bottom: 3px;
+}
+
+.genially-hint-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #0a4f66;
+    color: white;
+    font-size: 0.78rem;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 2px 8px;
+    vertical-align: middle;
+}
+
+.genially-hint-arrow {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    animation: bounce-up 1.2s ease-in-out infinite;
+}
+
+@keyframes bounce-up {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-5px); }
+}
+
 /* Placeholder del embed de Canva */
 .canva-placeholder {
     background: var(--azul-claro);
